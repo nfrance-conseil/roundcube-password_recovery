@@ -459,7 +459,7 @@ class password_recovery extends rcube_plugin {
             } else {
                 $code_validity_time = (int) $this->rc->config->get('pr_confirm_code_validity_time', 30);
             }
-            $fields[] = "token = '" . $props['token'] . "', token_validity = NOW() + INTERVAL " . $code_validity_time . " MINUTE";
+            $fields[] = "token = '" . $props['token'] . "', token_validity = NOW() + '" . $code_validity_time . " MINUTE'";
         }
 
         if ($props['password']) {
